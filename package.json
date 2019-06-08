@@ -1,0 +1,25 @@
+{
+  "name": "avam",
+  "version": "1.0.0",
+  "description": "An game-economy bot for discord.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrAugu/avam.git"
+  },
+  "author": "MrAugu#9016",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MrAugu/avam/issues"
+  },
+  "homepage": "https://github.com/MrAugu/avam#readme",
+  "dependencies": {
+    "dblapi.js": "^2.3.0",
+    "discord.js": "^11.5.1",
+    "figlet": "^1.2.3",
+    "mongoose": "^5.5.13"
+  }
+}
