@@ -16,7 +16,7 @@ module.exports = {
     cooldownReason: "This is called a **daily** bonus.",
     module: "economy",
 	async execute(client, message, args, reply) {
-        //let dailyCoins = Math.floor(Math.random() * 320) + 80;
+
         let dailyCoins = 250;
 
         Money.findOne({
@@ -38,6 +38,6 @@ module.exports = {
             }
         });
 
-        reply(`You got a daily bonus of <:aa:515884030508400641>${dailyCoins}!`);
+        reply(`You got a daily bonus of ${dailyCoins} coins.`);
     },
 };

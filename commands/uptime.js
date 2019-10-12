@@ -16,7 +16,7 @@ module.exports = {
     if(message.author.avatarURL === null) message.author.avatarURL = "https://mraugu.ga/avam_assets/pfp.png";
     let uptimeEmbed = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.avatarURL)
-        .setDescription(`<:online:466297632361414677> I have been online for ${uptime}.`)
+        .setDescription(`I have been online for ${uptime}.`)
         .setColor("BLURPLE")
         .setTimestamp();
 

@@ -10,12 +10,12 @@ module.exports = {
     usage: "<text>",
 	async execute(client, message, args, reply) {
         let maxLen = 12;
-        if(args.join(' ').length > maxLen) return reply("<:uncheck:515840843933024256> Only 12 characters are admitted!");
-        if(!args[0]) return reply("<:uncheck:515840843933024256> Please specify a test to asciify!");
- 
+        if(args.join(' ').length > maxLen) return reply("Only 12 characters are admitted!");
+        if(!args[0]) return reply("Please specify a test to asciify!");
+
         figlet(`${args.join(" ")}`, function(err, data) {
             if (err) {
-                console.log("<:uncheck:515840843933024256> Something went wrong...");
+                console.log("Something went wrong...");
                 return;
             }
             message.channel.send(`${data}`, {code: 'AsciiArt'});

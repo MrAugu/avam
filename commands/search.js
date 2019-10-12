@@ -33,23 +33,23 @@ module.exports = {
                 await newMoney.save().catch(e => console.log(e));
                 let embed = new Discord.RichEmbed()
                     .setAuthor(message.author.tag, message.author.avatarURL)
-                    .setDescription(`You searched far and wide and found <:aa:515884030508400641>${coinz}.`)
+                    .setDescription(`You searched far and wide and found ${coinz} coins.`)
                     .setColor("BLURPLE")
                     .setTimestamp();
-    
+
                 reply(embed);
             }
-    
+
             if(money) {
                 let embed = new Discord.RichEmbed()
                     .setAuthor(message.author.tag, message.author.avatarURL)
-                    .setDescription(`You searched far and wide and found <:aa:515884030508400641>${coinz}.`)
+                    .setDescription(`You searched far and wide and found ${coinz} coins.`)
                     .setColor("BLURPLE")
                     .setTimestamp();
                 money.coins = money.coins + coinz;
                 await money.save().catch(e => console.log(e));
                 reply(embed);
-    
+
             }
         });
     },

@@ -16,23 +16,23 @@ module.exports = {
     module: "economy",
     guildOnly: true,
 	async execute(client, message, args, reply) {
-        const msg = await reply(`<:thonk:478999091938852885> Hmm...`);
-    
+        const msg = await reply(`:think: Hmm...`);
+
         Money.findOne({
             userID: message.author.id,
             serverID: message.guild.id
         }, async (err, money) => {
             let chance = Math.floor(Math.random() * 100) + 1;
 
-            if(chance < 50) {
+            if (chance < 50) {
                 msg.edit("Nah, i don't give you any coins.");
             }
 
-            if(chance > 50) {
+            if (chance > 50) {
                 let newCoins = Math.floor(Math.random() * 4) + 1;
                 money.coins = money.coins + newCoins;
                 await money.save().catch(e => console.log(e));
-                msg.edit(`Ok sure, have <:aa:515884030508400641>${newCoins}.`);
+                msg.edit(`Ok sure, have ${newCoins} coins.`);
             }
         });
     },

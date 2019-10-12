@@ -18,21 +18,20 @@ module.exports = {
 	async execute(client, message, args, reply) {
         let target = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
 
-    if(target.user.bot) return reply(`<:uncheck:515840843933024256> Seems like **${target.user.username}** is a bot.`);
-    
+    if(target.user.bot) return reply(`Seems like **${target.user.username}** is a bot.`);
+
     Money.findOne({
         userID: target.user.id,
         serverID: message.guild.id
     }, async (err, money) => {
-        if(target.user.avatarURL === null) target.user.avatarURL = "https://mraugu.ga/avam_assets/pfp.png";
         let balanceEmbed = new Discord.RichEmbed()
-        .setAuthor(target.user.tag, target.user.avatarURL)
+        .setAuthor(target.user.tag, target.user.displayAvatarURL)
         .setColor("#54a041");
 
         if(!money) {
-            balanceEmbed.setDescription(`- ${target.user.tag} • <:aa:515884030508400641>0`)
+            balanceEmbed.setDescription(`- ${target.user.tag} • 0 Coins`)
         } else if(money) {
-            balanceEmbed.setDescription(`- ${target.user.tag} • <:aa:515884030508400641>${money.coins.toLocaleString()} `)
+            balanceEmbed.setDescription(`- ${target.user.tag} • ${money.coins.toLocaleString()} Coins`)
         }
 
         reply(balanceEmbed);
